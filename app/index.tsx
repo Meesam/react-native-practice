@@ -9,14 +9,14 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: Colors.dark.background,
+        backgroundColor: Colors.light.background,
       }}
     >
-      <Text style={{ color: Colors.dark.text }}>Hello React Native</Text>
-      <Link href={"/about"} style={{ color: Colors.dark.text }}>About</Link>
-      <Link href={"/explore"} style={{ color: Colors.dark.text }}>Explore</Link>
-      <Link href={"/(tab)"} style={{ color: Colors.dark.text }}>Tab</Link>
-      <Link href={"/(drawer)"} style={{ color: Colors.dark.text }}>Drawer</Link>
+      <Text style={{ color: Colors.light.text }}>Hello React Native</Text>
+      <Link href={"/about"} style={{ color: Colors.light.text }}>About</Link>
+      <Link href={"/explore"} style={{ color: Colors.light.text }}>Explore</Link>
+      <Link href={"/(tab)"} style={{ color: Colors.light.text }}>Tab</Link>
+      <Link href={"/(drawer)"} style={{ color: Colors.light.text }}>Drawer</Link>
 
     </View>
   );

@@ -1,31 +1,29 @@
+import { FontAwesome } from "@expo/vector-icons";
+import Feather from "@expo/vector-icons/Feather";
 import { Stack } from "expo-router";
-import { View, Text,StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 
-const LogoTitle = () => {
+const LogoTitle: React.FC<any> = () => {
   return (
     <View style={styles.logoTitle}>
-      <Text>Logo</Text>
+      <FontAwesome name="search" color={"gray"} size={20} />
+      <TextInput style={styles.search} placeholder="Search" />
+      <Feather name="more-vertical" size={20} color="gray" />
     </View>
   );
 };
 
 export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#f4511e",
-        },
-        headerTintColor: "#fff",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-      }}
-    >
+    <Stack>
       <Stack.Screen name="(tab)" options={{ headerShown: false }} />
       <Stack.Screen
         name="index"
-        options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
+        options={{
+          headerStyle: { backgroundColor: "white" },
+          headerTitle: (props) => <LogoTitle {...props} />,
+        }}
+        
       />
       <Stack.Screen
         name="about/index"
@@ -40,9 +38,17 @@ export default function RootLayout() {
 }
 
 const styles = StyleSheet.create({
-  logoTitle:{
+  logoTitle: {
+    flexDirection: "row",
+    alignItems: "center",
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+  },
+  search: {
+    borderColor: "gray",
+    borderWidth: 1,
+    paddingLeft: 10,
+    borderRadius: 15,
+    width: 350,
+    height: 40,
+  },
 });
